@@ -72,7 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem; 
+  text-align: left;}
 
 abbr[title],
 abbr[data-original-title] {
@@ -93,11 +94,16 @@ dl {
   margin-top: 0;
   margin-bottom: 1rem; }
 
+li {
+  text-align: left;
+}
+
 ol ol,
 ul ul,
 ol ul,
 ul ol {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align:left; }
 
 dt {
   font-weight: 700; }
