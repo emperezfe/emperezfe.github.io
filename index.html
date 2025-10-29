@@ -1,453 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>hi, welcome to Eva's portfolio</title>
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet">
-        <!-- Fonts CSS-->
-        <link rel="stylesheet" href="css/heading.css">
-        <link rel="stylesheet" href="css/body.css">
-    </head>
-    <body id="page-top">
-        <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-            <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">home</a>
-                <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">PROJECTS</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/pp2.jpg" id="profilePic" alt="">
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">Eva María Pérez Fernández</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Game designer</h4>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0">
-                <h5 class="page-section-heading text-secondary mb-0 d-inline-block">Hi there! I am a game designer and developer with five years of experience in the videogames industry. My drive is to put all my creativity, knowledge and resolutiveness in the art of creating fun and memorable experiences.</h4>
-                 <div class="text-center">
-                    
-                </div></p>
-            </div>
-        </header>
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">professional projects</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Items-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/TWlogo.png" alt="TequilaWorks"/>
-                        </div>
-                    </div>
-                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/lingokids.jpeg" alt="Lingokids"/>
-                        </div>
-                    </div>
-                 </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Eva Pérez — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-                  <div class="container">
-                <!-- Portfolio Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary mb-0 d-inline-block">academic projects and jams</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Items-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/necroweb.png" alt="Necrognomicon"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/gatecrasheruwu.png" alt="Gatecrasher"/>
-                        </div>
-                    </div>
-             
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/balaclava.PNG" alt="Balaclava"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/IFO.PNG" alt="IFO"/>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/itchio.png" alt="Itch.io page"/>
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
-        </section>
-        <!-- Portfolio Modal-->
-        <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Lingokids</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Game designer for two and a half years. Responsible for the game design, since the concept phase until the end of development, of 14 educational game templates. The games are published inside the Lingokids app and include puzzles, story-driven games, arcade games, logic games and creativity games, for ages 2-8. For every game I've worked on, my responsability is to design systems and mechanics, levels, and UIs, and work in a small team with an artist and a programmer to develop the game from beginning to end.</p>
-                                    <p class="mb-5">
-                                    I am in charge of creating concepts from scratch, pitching ideas and sketches, and then creating high level concept documents and GDDs along with prototypes using Unity. Along with taking care of documentation, during development my role is to supervise the design and make sure the game's phylosophy is properly understood and put to work, assisting all departments when needed, along with balancing and tweaking the different systems to be appropiate for our players, until the games are published in the app. After publishing, I take part in data analysis and in designing polishing actions using said data. Throughout development, I also take part in presential user tests: preparation, attendance, and posterior analysis, extracting insights and polishing actions. </p>
-                                    <p class="mb-5">Here are some examples of games that I've worked on at Lingokids:</p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/bouncingbilly.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Bouncing Billy is an arcade game in which the player moves a spaceship in a map full of obstacles looking for letters that form a word. Level design was the key part of this development: spaces needed to be wide and being able to do backtracking easily was a must.</p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/photoalbum.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Photo Album is a game about exploring the surroundings of an open map to find animals and take pictures of them. Some animals are hidden, and some others appear flying, leaving only some seconds to tap on them and take their picture. The player also has a photo album in which the animal's photos can be revisited.</p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/wagon.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Wagon Catch is an arcade game conceived to approach counting to kids. Objects fall from the sky: the player's objective is to collect a certain amount of items. Powerups, boosters and punishing powerups fall too, modifying the game's behaviour when they are caught.</p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tinytales.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Tiny Tales is one of the first narrative-driven games created at Lingokids. The player's objective is to put together a story by ordering some cards sequentially. After getting them right, a narrator tells the story to the player. </p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/patterndance.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Pattern Dance is a game used to teach patterns and sequences in a kid-friendly, understandable way. A character dances to a song in which some elements are repeated in a pattern, and the player needs to replicate the dance.</p>
-                                      <img class="img-fluid rounded mb-5" src="assets/img/portfolio/artist.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Artist Playground is a creativity game, an open play tool in which several brushes, backgrounds and stamps are provided to the player. This game had no concrete objectives rather than letting the players experiment and create: just providing the tools to let the players set their own goals for their drawings.</p>
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tangram.jpeg" alt="Lingokids"/>
-                                    <p class="mb-5">Spatial Puzzle is a puzzle game in which Tangram pieces are used to construct a figure that becomes alive after the player finishes building it properly.</p>
-                                    <p class="mb-5">                    </p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal1Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Necrognomicon</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/necroscreenshot.png" alt="Necrognomicon"/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5"> I was the Lead game designer for my master's degree project. Necrognomicon is a third-person action-tower defense game about smashing hordes of evil garden gnomes. In this project I designed every system in the game, including AI, horde manager, combat, weapons, narrative or levels, along with creating documentation and supporting all departments. Also conducted several playtesting sesions and did data analysis of the game's statistics after each session. Available on <a href="https://ventekgames.itch.io/necrognomicon">our team's itch.io page!</a> </p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal2Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0"> Gatecrasher </h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/gatecrashergameplay.png" alt="Necrognomicon"/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5"> Game designer. Gatecrasher is a tower defense created for an university project. Use St. Peter's troops to defend heaven against the attack of several sinners! I took responsability for game design, documentation, and working hand in hand with the rest artists and programmers. Available <a href="https://sickmyduckinc.github.io/GateCrasher/">here.</a> </p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal3Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Balaclava</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/balaclava.PNG" alt="Balaclava"/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Game designer. Balaclava is an asymmetrical multiplayer game about robbing banks created for an university project. One of the players has to break into the bank and the other one will have access to a database with crucial information for the robbery to be successful. Together they'll have to solve puzzles, avoid guards, open safes and steal the cash! I developed the idea from scratch, creating the documentation and assisting throughout the whole development. Available <a href="https://sickmyduckinc.github.io/Balaclava/">here </a></p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal4Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">IFO</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/ifo2.png" alt="IFO"/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Game & audio designer. IFO is an arcade game I designed for a game jam. Theme was "ridiculous superpowers", so we made a game about fighting alien dogs by throwing them deadly slippers and putting a super-powerful sleepwalker baby to sleep. <a href= "https://whoone.itch.io/ifo">Check it out!</a></p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal5Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Itch.io page</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                    
-                                    <p class="mb-5">I've participated in several gamejams (some of them with more people, some other on my own) using different game engines (mostly Unity and Unreal Engine). All the projects are available on my itch.io page. <a href= "https://theavoid.itch.io">Check them out here!</a> </p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal6Label" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
-                    <div class="modal-body text-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Tequila Works</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                    </div>
-                                        <p class="mb-5">
-                                            <p class="mb-6"><strong>Unannounced AAA third-person adventure game</strong></p>
-                                            <p class="mb-6"><strong>Role:</strong> Systems and combat designer</p>
-                                            <p class="mb-6"><strong>Duration:</strong> 2 years</p>
-                                            <p class="mb-6"><strong>Platforms:</strong> PC/Consoles</p>
-                                            <p class="mb-6"><strong>Team size: 130</strong></p>
-                                            <p class="mb-6"><strong>Technology:</strong> Unreal Engine 5</p>
-                                            <p class="mb-6">The project has not been announced, so there is not much specific information or any media that I can add since the game is under NDA protection.</p>
-                                        </p>
-                                        <p class="mb-5">                                  
-                                            <p class="mb-6"><strong>My contributions to the project:</strong></p>
-                                            <p class="mb-6"><strong>Concept phase:</strong>
-                                                <ul>
-                                                  <li>Helped land the initial concept and prototypes of the game in a team formed by 10 people. </li>
-                                                  <li>Took part in designing core systems that formed the game's core loop and experience.</li>
-                                                  <li>Designed character mechanics and abilities, prototiped them and fine-tuned them.</li>
-                                                  <li>Designed and implemented a significant amount of puzzles that made use of the game's core systems.</li>
-                                                  <li>Designed, implemented and fine-tuned several NPCs' AI behaviors and abilities.</li>
-                                                </ul>
-                                            </p>
-                                            <p class="mb-6"><strong>Preproduction phase and production phase:</strong></p>
-                                            <p class="mb-6"><strong>Systems designer</strong></p>
-                                                <ul>
-                                                  <li>Worked as a systems designer for more than one year. </li>
-                                                  <li>I helped establish many of the main systems of the game. Some systems were related to the game's core rules (physics, destruction, sound...) and some others were related to AI agents (ecosystem, AI navigation rules, AI behaviors...).</li>
-                                                  <li>All the systems were designed to be easily explained and understood by the player, by making them as reliable and accurate to what players would expect as possible. All the interactions feature feedback (visual and sound) and reactions from the environment or from AI agents to make sure that the player understood the impact of their actions. </li>
-                                                  <li>Heavily focused on physics and destruction systems, making sure that they offered a realistic and believable experience.</li>
-                                                  <li>Designed and implemented puzzle prototypes that made use of the designed systems. Iterated on those puzzles until they reached a good enough state to be placed in the final game.</li>
-                                                  <li>Designed and prototyped AI agents. Designed and documented their abilities and then iterated on their behavior trees to fine-tune them (a list of some behaviors examples: follow, flee, attack, and other several special abilities related to each NPC).</li>
-                                                </ul>
-                                          
-                                            <p class="mb-6"><strong>Combat designer</strong></p>
-                                             <ul>
-                                                  <li>Worked as a combat designer in the same project for eight months, since more effort was needed in that department at that state of the project.</li>
-                                                  <li>Designed core combat systems that were used to define the core experience (entering and exiting combat system, player death...).</li>
-                                                  <li>Refactored the whole project's damage system, in order to make it systemic and more usable for the combat team and for all the project's departments.</li>
-                                                  <li>Designed and prototyped systems related to damage and objects destruction inside of combat state.</li>
-                                                  <li>Designed and prototyped player combat abilities (mainly, abilities used for enhancing combat mobility).</li>
-                                                  <li>Designed and implemented combat encounters that made use of the game's combat abilities and enemies. Tweaked and fine-tuned said encounters to offer the most polished experience possible.</li>
-                                                  <li>Designed and implemented systems used to enhance the combat's overall game feel.</li>
-                                                </ul>
-                                            <p class="mb-6">Other contributions, outside of combat and systems: created and configured the project's player respawn system, and a significant part of the player's save file system.</p>
-                                           
-                                        </p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading d-inline-block text-white">about me</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ml-auto">
-                        <p class="pre-wrap lead">Hi! My name is Eva. Since I was a kid, videogames have always been my hobby and my main source of disconnecting from the world and connecting with myself. I have been playing videogames my whole life, then later on realized that I also wanted to learn why do games have such power of tickling the right spots in our brain. Along with being one of my hobbies and passions, I decided to make games my career.
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="logo">E</span><span>Eva Pérez</span>
+      </a>
+      <nav>
+        <button class="menu-btn" aria-expanded="false" aria-controls="nav-list"
+          onclick="document.querySelector('.nav').classList.toggle('open');this.setAttribute('aria-expanded', document.querySelector('.nav').classList.contains('open'));">
+          ☰ Menu
+        </button>
+      </nav>
+      <ul id="nav-list">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="personal.html">Personal Projects</a></li>
+      </ul>
+    </div>
+  </header>
 
-I studied video game development and majored in game design, while making personal projects and game jams. In 2020 I started working professionally in the industry as a game designer. My focus ever since is to keep growing and putting all my passion and knowledge into creating fun, engaging and accessible experiences.</p>
-                    </div>
-                    <div class="col-lg-4 mr-auto">
-                        <p class="pre-wrap lead">I consider myself a generalist game designer, willing to create all sorts of experiences. So far, I have worked on various game design areas and types of projects: from educational games, to mobile, PC and consoles games (enrolling in mostly combat, gameplay and combat design roles), all of them bringing enriching experiences for me and broadening my design knowledge. I am a flexible and open-minded person that has needed to step up as one-woman-army in many projects, so I am able to adapt and to put my efforts in whatever is needed to make a game move forward.
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero v2-wrap">
+      <div class="eyebrow">hello</div>
+      <h1 class="v2-title">welcome to eva's world</h1>
+      <p class="v2-sub">game designer and developer open for collaborations & consulting</p>
+      <div class="v2-cta">
+        <a class="btn" href="career.html">View career →</a>
+        <a class="btn" href="academic.html">View academic work →</a>
+        <a class="btn" href="personal.html">View personal projects →</a>
+      </div>
+    </section>
 
-Apart from videogames, I also enjoy writing, cooking, watching tons of movies, and listening to way too many music genres.
-</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary d-inline-block mb-0">let's chat!</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                  
-                </div>
-                <!-- Contact Section Content-->
-                <div class="row justify-content-center">
-                  
-                    <div class="col-lg-4">
-                        <div class="d-flex flex-column align-items-center">
-                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
-                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:emperezfe@gmail.com">emperezfe@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- PROFILE -->
+    <section class="section profile-wrap">
+      <div class="profile">
+        <div class="col">
+          <div class="eyebrow">whatever you make,</div>
+          <h2 class="title">make it playful.</h2>
+          <p class="lead">
+            Professional game designer with 5+ years of experience in different companies and
+            background both in <strong>serious games</strong> and in <strong>commercial console titles</strong>.
+            Keeping it fun, inmersive and usable, no matter the objective and the context. 
+            My biggest interest is studying how <strong>systems and rules</strong> shape meaningful and playful experiences.
+             Lastly, I consider myself a <strong>game feel enthusiast</strong>, aiming for games to look and feel as best as they could.
+          </p>
+          <p class="lead">
+             I am open to <strong>game design consulting and collaborations in projects.</strong> Let's exchange ideas!
+          </p>
+          <p style="margin-top:16px;display:flex;gap:.6rem;flex-wrap:wrap">
+            <a class="btn" href="mailto:you@example.com">Want to collaborate?</a>
+            <a class="btn" href="resources/CV_EvaMariaPerez_ENG.pdf" target="_blank" rel="noopener">Open CV (PDF) →</a>
+          </p>
+        </div>
+        <div class="col photo">
+          <img id="profile-photo" src="img/profile_eva.jpg" alt="Portrait of Eva Pérez"
+               style="width:100%;height:auto;display:block;border-radius:8px">
+          <img id="profile-photo" src="img/profile_eva.jpg" alt="Portrait of Eva Pérez"
+               style="width:100%;height:auto;display:block;border-radius:8px">
+        </div>
+      </div>
+    </section>
+  </main>
 
-        </section>
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="mb-4">LOCATION</h4>
-                        <p class="pre-wrap lead mb-0">                    Madrid, Spain </p>
-                    </div>
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="mb-4">DOWNLOAD CV</h4><a class="btn btn-outline-light btn-social mx-1" href="assets/cv/CV_EvaMariaPerezFernandez_ENG.pdf"></a>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="mb-4">AROUND THE WEB</h4><a class="btn btn-outline-light btn-social mx-1" href="https://x.com/theavoid_"><i class="fab fa-fw fa-twitter"></i></a><a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/eva-mar%C3%ADa-p%C3%A9rez-fern%C3%A1ndez-605aa7139/"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                    </div>
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Eva Pérez — Portfolio</div>
+     <div class="container"> <span id="y"></span> hover to move stars. left click to explode stars.</div>
+     <div class="container"> <span id="y"></span> FREE PALESTINE.</div>
+  </footer>
 
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="mb-4"></h4>
-                        <p class="pre-wrap lead mb-0"> </p>
-                    </div>
-                </div>
-                  
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="mb-4"></h4>
-                        <p class="pre-wrap lead mb-0"> </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <section class="copyright py-4 text-center text-white">
-            <div class="container"><small class="pre-wrap">Copyright © Eva María Pérez Fernández, 2024</small></div>
-        </section>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+  <!-- FAB links -->
+  <div class="fab-stack" aria-label="Quick links">
+    <a class="fab" href="https://theavoid.itch.io/" target="_blank" rel="noopener" title="itch.io" aria-label="itch.io">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16l2 4v6a2 2 0 0 1-2 2h-4l-4 3-4-3H4a2 2 0 0 1-2-2V10l2-4Z"/></svg>
+    </a>
+    <a class="fab" href="https://www.linkedin.com/in/emperezfe/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4.01 0 4.75 2.64 4.75 6.08V24h-4v-6.8c0-1.62-.03-3.7-2.25-3.7-2.26 0-2.6 1.76-2.6 3.58V24h-4V8z"/></svg>
+    </a>
+    <a class="fab" href="mailto:you@example.com" title="Email" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm10 7 10-7H2l10 7Zm-10 7h20V9l-10 7L2 9v10Z"/></svg>
+    </a>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="app.js"></script>
+</body>
 </html>

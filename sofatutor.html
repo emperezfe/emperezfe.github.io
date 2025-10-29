@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sofatutor — Eva Pérez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="logo">E</span><span>Eva Pérez</span></a>
+      <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button></nav>
+      <ul>
+        <li><a class="active" href="career.html">Career</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="personal.html">Personal Projects</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="career.html" class="eyebrow">← Back</a>
+    <h1 class="h1">Sofatutor</h1>
+    <p class="muted">Game & Product Designer — Apr 2025–Present</p>
+
+<!-- Overview / Responsibilities / Tools -->
+<section class="grid" style="margin-bottom:18px">
+  <article class="card">
+    <h3>Overview</h3>
+    <ul class="list">
+      <li><strong>Role:</strong> Game & Product Designer</li>
+      <li><strong>Scope:</strong> Kid-friendly learning products from concept to release</li>
+      <li><strong>Core overlap:</strong> Game design ↔ Product / UI / UX</li>
+      <li><strong>Platforms:</strong> iOS & Android</li>
+      <li><strong>Tools:</strong> Unity (C#), Figma</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>What I do</h3>
+    <ul class="list">
+      <li>Core loops & mechanics for educational games (ages 2–6).</li>
+      <li>Fast Unity prototypes to validate mechanics and tune moment-to-moment <em>game feel</em>.</li>
+      <li>App-wide UI/UX (flows, components, design system) in <strong>Figma</strong>.</li>
+      <li>Prepare stories and align stakeholders across design, engineering, content and analytics.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>Tools</h3>
+    <ul class="list">
+      <li>Unity, Figma, spreadsheets</li>
+      <li>Amplitude / Looker (analytics)</li>
+      <li>Jira, Confluence</li>
+    </ul>
+  </article>
+</section>
+
+
+    <!-- Selected projects (alternating rows with 16:9 media boxes) -->
+    <article class="card">
+      <h3>Selected projects</h3>
+
+      <!-- Row: Tracing Template -->
+      <div class="row-2col" style="margin-bottom:22px">
+        <div>
+          <p><strong>Tracing game template</strong> enabling <strong>50+ games</strong>. Full ownership from concept to release,
+          supervision through production, and adaptations under tight technical constraints.</p>
+          <ul class="list">
+            <li>Stroke detection, forgiveness windows, delightful feedback.</li>
+            <li>Localization-friendly content pipeline.</li>
+          </ul>
+        </div>
+        <figure class="project-media media-box" style="margin:0">
+          <!-- sustituye por tu captura -->
+          <img src="img/sofatutor_tracing.jpg" alt="Tracing template — Sofatutor">
+        </figure>
+      </div>
+
+      <!-- Row: Two fast templates -->
+      <div class="row-2col" style="grid-template-columns:1fr 1.1fr; margin-bottom:22px">
+        <figure class="project-media media-box" style="margin:0">
+          <img src="img/sofatutor_fasttemplate.jpg" alt="Fast template — Sofatutor">
+        </figure>
+        <div>
+          <p><strong>Two fast-track game templates</strong> delivered in ~1 month each; pre-coded Unity prototypes to de-risk design.
+          These templates now power <strong>20+ shipped games</strong>.</p>
+          <ul class="list">
+            <li>Mechanics validation + content-authoring approach.</li>
+            <li>Polished controls & juice aligned with the brand.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Row: Engagement / product features
+      <div class="row-2col" style="margin:0">
+        <div>
+          <p><strong>Engagement features</strong> to support alternative learning formats. Product exploration and
+          clickable <strong>Figma prototypes</strong> for flows, navigation and components.</p>
+          <ul class="list">
+            <li>Hypothesis-driven UX with quick evaluative tests.</li>
+            <li>Design tokens & systemized components for the kids app.</li>
+          </ul>
+        </div>
+        <figure class="project-media media-box" style="margin:0">
+          <img src="img/sofatutor_engagement.jpg" alt="Engagement features — Sofatutor">
+        </figure>
+      </div>
+    </article>
+
+     -->
+
+    <!-- Impact -->
+    <article class="card">
+      <h3>Impact</h3>
+      <ul class="list">
+        <li>Shorter iteration cycles via prototype-first workflow.</li>
+        <li>Clearer, more consistent UI patterns across the kids experience.</li>
+        <li>Higher reliability of shipped mechanics thanks to early feel-tuning.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="y"></span> Eva Pérez</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script src="app.js"></script>
+</body>
+</html>

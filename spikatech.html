@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spikatech — Eva Pérez</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">E</span><span>Eva Pérez</span></a>
+    <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button></nav>
+    <ul>
+      <li><a class="active" href="career.html">Career</a></li>
+      <li><a href="academic.html">Academic</a></li>
+      <li><a href="personal.html">Personal Projects</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+  <a href="career.html" class="eyebrow">← Back</a>
+  <h1 class="h1">Spikatech</h1>
+  <p class="muted">Narrative Designer (VR) &amp; XR Developer — 2018–2019</p>
+
+  <!-- Overview / Responsibilities / Tools -->
+<section class="grid" style="margin-bottom:18px">
+  <article class="card">
+    <h3>Overview</h3>
+    <ul class="list">
+      <li><strong>Role:</strong> Game Designer & Developer</li>
+      <li><strong>Duration:</strong> 8 months</li>
+      <li><strong>Platforms:</strong> VR; mobile; PC </li>
+      <p style="margin-top:10px"><a class="btn outline" href="https://www.spikatech.com/magallanes">View project webpage</a></p>
+      
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>Responsibilities</h3>
+    <ul class="list">
+      <li>Ownership of narrative for a VR experience.</li>
+      <li>Ownership of an AR application, taking care of design and implementation.</li>
+      <li>Close collaboration with programming and art for implementation and polish.</li>
+      <li>Documentation and communication of gameplay specifications.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>Tools</h3>
+    <ul class="list">
+      <li>Unity</li>
+      <li>Vuforia</li>
+      <li>Unreal Engine 4</li>
+    </ul>
+  </article>
+</section>
+
+
+  <article class="card">
+    <h3>VR museum experience — Magellan expedition (5th centenary)</h3>
+    <ul class="list">
+      <li><strong>Role:</strong> Narrative Designer</li>
+      <li><strong>Goal:</strong> A museum-grade VR experience where users become sailors and live the expedition.</li>
+      <li><strong>Work:</strong> Script and mechanics design, aligning <em>gameplay beats</em> with each narrative moment.</li>
+      <li><strong>Prototyping:</strong> VR tests in <strong>Unreal Engine 4</strong> to validate interactions and pacing.</li>
+      <li><strong>Status:</strong> Project was cancelled and never published (NDA).</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>AR companion app — Unity + Vuforia</h3>
+    <ul class="list">
+      <li><strong>Role:</strong> AR Designer &amp; Developer.</li>
+      <li><strong>Goal:</strong> Interactive museum app complementing the VR experience.</li>
+      <li><strong>Work:</strong> Marker/QR-based experiences showing live animations, reactions and facts about the expedition.</li>
+      <li><strong>Tech:</strong> <strong>Unity</strong>, <strong>Vuforia</strong>.</li>
+    </ul>
+  </article>
+
+</main>
+
+<footer class="footer"><div class="container">© <span id="y"></span> Eva Pérez</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="app.js"></script>
+</body></html>

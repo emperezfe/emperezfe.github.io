@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career — Eva Pérez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="logo">E</span><span>Eva Pérez</span></a>
+      <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰ Menu</button></nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="career.html">Career</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="personal.html">Personal Projects</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h1 class="h1">Professional timeline</h1>
+      <p class="muted">Key roles and responsibilities across studios and products.</p>
+
+      <div class="timeline">
+
+        <!-- Sofatutor -->
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-arm right"></span>
+          <div class="tl-side right">
+            <div class="tl-head">
+              <div class="tl-ico"><img src="img/stkids.jpeg" alt="Sofatutor logo"></div>
+              <span class="tl-role">Sofatutor KIDS — Game & Product Designer</span>
+              <span class="tl-meta">Apr 2025 — Present</span>
+            </div>
+            <div class="tl-card">
+              <p>Game and Product designer. Current role!</p>
+              <!--
+              <ul class="list">
+                <li>Core loops & mechanics for educational games for ages 2-6.</li>
+                <li>Fast Unity prototypes to validate and tune game feel.</li>
+                <li>UI/UX flows, components, and design system in Figma.</li>
+                <li>Cross-functional coordination across design, engineering & analytics.</li>
+              </ul>
+              -->
+              <!-- <p style="margin-top:10px"><a class="btn outline" href="sofatutor.html">View details →</a></p> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Tequila Works -->
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-arm left"></span>
+          <div class="tl-side left">
+            <div class="tl-head">
+              <div class="tl-ico"><img src="img/TWlogo3.jpg" alt="Tequila Works logo"></div>
+              <span class="tl-role">Tequila Works — Game Designer</span>
+              <span class="tl-meta">2023 — 2025</span>
+            </div>
+            <div class="tl-card">
+              <p>Worked in an unannounced open-world AA action/adventure title. Focused in systems and combat design. </p>
+              <ul class="list">
+                <li>Core systems, puzzles and combat mechanics ideation and prototyping.</li>
+                <li>AI systems & behaviour trees and NPC systems.</li>
+                <li>Cross-department coordination and documentation of systemic design.</li>
+              </ul>
+              <p style="margin-top:10px"><a class="btn outline" href="tequilaworks.html">View details →</a></p> 
+            </div>
+          </div>
+        </div>
+
+        <!-- Lingokids -->
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-arm right"></span>
+          <div class="tl-side right">
+            <div class="tl-head">
+              <div class="tl-ico"><img src="img/logos/lingokids_logo.png" alt="Lingokids logo"></div>
+              <span class="tl-role">Lingokids — Game Designer</span>
+              <span class="tl-meta">2020 — 2023</span>
+            </div>
+            <div class="tl-card">
+              <p>Educational games for kids from concept to release within the Lingokids app.</p>
+              <ul class="list">
+                <li>+15 educational videogames covering logic, creativity, arcade and narrative genres, among others.</li>
+                <li>Unity prototyping, user testing with children, and post-launch iteration.</li>
+              </ul>
+              <p style="margin-top:10px"><a class="btn outline" href="lingokids.html">View details →</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spikatech -->
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <span class="tl-arm left"></span>
+          <div class="tl-side left">
+            <div class="tl-head">
+              <div class="tl-ico"><img src="img/logos/spika_logo.png" alt="Spikatech logo"></div>
+              <span class="tl-role">Spikatech — Narrative Designer (VR) & XR Developer</span>
+              <span class="tl-meta">2018 — 2019</span>
+            </div>
+            <div class="tl-card">
+              <p>Narrative Designer for a VR experience commemorating the Magellan expedition’s fifth centenary, intended for museum installations.</p>
+              <ul class="list">
+                <li>Designed the script, mechanics and gameplay beats to align with narrative flow.</li>
+                <li>Created VR prototypes in <strong>Unreal Engine 4</strong> to validate mechanics.</li>
+                <li>Developed AR experiences in <strong>Unity + Vuforia</strong> using markers and QR codes for interactive educational content.</li>
+                <li>Project under NDA; cancelled before public release.</li>
+              </ul>
+              <p style="margin-top:10px"><a class="btn outline" href="spikatech.html">View details →</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Eva Pérez — Portfolio</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="app.js"></script>
+</body>
+</html>

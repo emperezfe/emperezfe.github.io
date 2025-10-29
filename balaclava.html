@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balaclava — Eva Pérez</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">E</span> <span>Eva Pérez</span></a>
+    <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰ Menu</button></nav>
+    <ul>
+      <li><a  href="index.html">Home</a></li>
+      <li><a  href="professional.html">Professional</a></li>
+      <li><a  href="academic.html">Academic</a></li>
+      <li><a  href="jams.html">Jams</a></li>
+    </ul>
+  </div>
+</header>
+<main class="container">
+<section class="section"><a href="professional.html" class="eyebrow">← Back</a><h1 class="h1">Balaclava</h1>
+<p class="muted">Add a short project summary (1–2 sentences).</p></section>
+<section class="grid">
+  <article class="card"><h3>Main screenshot</h3>
+  <figure class="figure" style="display:block;padding:0;overflow:hidden">
+    <img src="img/placeholder.jpg" alt="Balaclava — screenshot" style="width:100%;height:auto;display:block">
+    <figcaption class="muted" style="margin-top:8px">Caption (what we see / version / context).</figcaption>
+  </figure></article>
+  <aside class="card"><h3>Info</h3>
+    <ul class="list"><li><strong>Date:</strong> ________</li><li><strong>Platform:</strong> ________</li><li><strong>Tools:</strong> ________</li><li><strong>Role:</strong> ________</li><li><strong>Duration:</strong> ________</li><li><strong>Team:</strong> ________</li></ul>
+    <h3 style="margin-top:16px">Links</h3><ul class="list"><li><a href="#" target="_blank" rel="noopener">Itch.io / Drive / Video</a></li></ul>
+  </aside>
+</section>
+<section class="grid" style="margin-top:16px"><article class="card"><h3>Description</h3>
+<p>Write about goals, mechanics, process, and key learnings. Add GIFs or more images if relevant.</p></article></section>
+</main>
+<footer class="footer"><div class="container">© <span id="y"></span> Eva Pérez — Portfolio</div></footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="app.js"></script>
+<div class="fab-stack" aria-label="Quick links">
+  <a class="fab" href="https://itch.io" target="_blank" rel="noopener" title="itch.io" aria-label="itch.io">
+    <svg viewBox="0 0 24 24"><path d="M4 6h16l2 4v6a2 2 0 0 1-2 2h-4l-4 3-4-3H4a2 2 0 0 1-2-2V10l2-4Z"/></svg>
+  </a>
+  <a class="fab" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4.01 0 4.75 2.64 4.75 6.08V24h-4v-6.8c0-1.62-.03-3.7-2.25-3.7-2.26 0-2.6 1.76-2.6 3.58V24h-4V8z"/></svg>
+  </a>
+  <a class="fab" href="mailto:you@example.com" title="Email" aria-label="Email">
+    <svg viewBox="0 0 24 24"><path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm10 7 10-7H2l10 7Zm-10 7h20V9l-10 7L2 9v10Z"/></svg>
+  </a>
+</div>
+</body></html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tequila Works — Eva Pérez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="logo">E</span><span>Eva Pérez</span></a>
+      <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button></nav>
+      <ul>
+        <li><a class="active" href="career.html">Career</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="personal.html">Personal Projects</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="career.html" class="eyebrow">← Back</a>
+    <h1 class="h1">Tequila Works</h1>
+    <p class="muted">Systems &amp; Combat Designer — 2023–2025</p>
+
+<!-- Overview / Responsibilities / Tools -->
+<section class="grid" style="margin-bottom:18px">
+  <article class="card">
+    <h3>Overview</h3>
+    <ul class="list">
+      <li><strong>Project:</strong> Unannounced AAA third-person adventure game</li>
+      <li><strong>Role:</strong> Systems and combat designer</li>
+      <li><strong>Duration:</strong> 2 years</li>
+      <li><strong>Platforms:</strong> PC / Consoles</li>
+      <li><strong>Team size:</strong> 130</li>
+      <li><strong>Technology:</strong> Unreal Engine 5</li>
+    </ul>
+    <p class="muted" style="margin-top:10px">
+      The project has not been announced, so there is not much specific information or any media that I can add since the game is under NDA protection.
+    </p>
+  </article>
+
+  <article class="card">
+    <h3>High-level responsibilities</h3>
+    <ul class="list">
+      <li>Systemic game design with emergent systems.</li>
+      <li>Combat mechanics & systems. Special focus in game feel systems.</li>
+      <li>Prototyping and in-engine setup in <strong>Unreal Engine 5</strong>.</li>
+      <li>Cross-team alignment and ownership of specific features.</li>
+      <li>Create and maintain documentation.</li>
+      <li>Hands-on prototyping to validate risks early.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h3>Tools</h3>
+    <ul class="list">
+      <li>Unreal Engine 5</li>
+      <li>Miro</li>
+      <li>Confluence and Jira</li>
+      <li>Google Spreadsheets</li>
+    </ul>
+  </article>
+</section>
+
+
+    <!-- Concept phase -->
+    <article class="card">
+      <h3>Contributions — Concept phase</h3>
+      <div class="two-col-alt">
+        <div>
+          <p>Helped land the initial concept and prototypes in a ~10 people strike team. Co-designed core systems forming the game’s loop and experience; designed, prototyped and fine-tuned character mechanics and abilities. Implemented a significant number of puzzles leveraging systemic rules; designed/tuned NPC AI behaviours and abilities.</p>
+        </div>
+         <figure class="media-box square">
+          <img src="img/TWlogo.png" alt="Physics & destruction readability.">
+          <figcaption class="muted">Physics &amp; destruction readability.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- Systems Design (Preprod & Prod) -->
+    <article class="card">
+      <h3>Contributions — Systems Design</h3>
+      <div class="two-col">
+        <div>
+          <ul class="list">
+            <li>Worked 1+ years as a systems designer, establishing core rules (physics, destruction, sound) and NPC AI-related systems (ecosystem, nav rules, behaviours). Prioritized predictability and feedback clarity (VFX/SFX, environment/AI reactions).</li>
+            <li>Owned physics and destruction systems, designed them from scratch and created puzzles and gameplay beats based on them.</li>
+            <li>Created puzzle prototypes based on systemic interactions using mentioned systems along with others (sound systems, wind systems, light systems...).</li>
+            <li>Believable emergent systemic reactions &amp; feedback to communicate the game's status to the player.</li>
+            <li>Created NPCs that provided different gameplay situations: from traversal enhancers to tools to be used in puzzles.</li>
+            <li>Designed and prototyped AI agents and iterated behaviour trees. </li>
+            <li>All of these materials can be shown under a NDA clausule.</li>
+          </ul>
+
+        </div>
+        <figure class="media-box square">
+          <img src="img/TWlogo.png" alt="Physics & destruction readability.">
+          <figcaption class="muted">Physics &amp; destruction readability.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- Combat Design -->
+    <article class="card">
+      <h3>Contributions — Combat Design</h3>
+      <div class="two-col-alt">
+        <figure class="media-box square">
+          <img src="img/TWlogo3.jpg" alt="Combat readability & systems.">
+          <figcaption class="muted">Combat systems &amp; feel.</figcaption>
+        </figure>
+        <div>
+          <ul class="list">
+            <li>Worked as a combat designer for eight months to reinforce the department.</li>
+            <li>Designed core combat systems: entering/exiting combat state within an open world, or player death and respawn conditions, or a fall damage system, among others.</li>
+            <li>Refactored the project’s damage system to be systemic and broadly usable.</li>
+            <li>Designed/prototyped environment destruction &amp; damage systems inside combat, making them systemic and usable as combat tools.</li>
+            <li>Designed/prototyped player combat abilities (mostly, mobility-focused, like dashes and air dashes).</li>
+            <li>Designed/implemented combat encounters in an open world. Level design and layout for the encounters. </li>
+            <li>Implemented systems to enhance overall combat game feel that rewarded players with a better feel if they were proficient in combat.</li>
+            <li>All of these materials can be shown under a NDA clausule.</li>
+          </ul>
+          <p class="muted">Other contributions: created &amp; configured the open world player respawn system, and a significant part of the player save-file system.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Eva Pérez</div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script src="app.js"></script>
+</body>
+</html>

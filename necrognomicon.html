@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Necrognomicon — Eva Pérez</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="logo">E</span><span>Eva Pérez</span></a>
+      <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button></nav>
+      <ul>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="academic.html">Academic</a></li>
+        <li><a href="personal.html">Personal Projects</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="personal.html" class="eyebrow">← Back</a>
+    <h1 class="h1">Necrognomicon</h1>
+    <p class="muted">Action and tower defense game about an army of possessed garden gnomes taking over a small town.</p>
+
+    <!-- Info -->
+    <article class="card">
+      <h3>Overview</h3>
+      <ul class="list">
+        <li><strong>Role:</strong> Main game designer </li>
+        <li><strong>Platform:</strong> PC (itch.io)</li>
+        <li><strong>Engine:</strong> Unreal Engine 4</li>
+        <li><strong>Team:</strong> +25 people</li>
+        <li><strong>Dates:</strong> From December 2019 to July 2020</li>
+      </ul>
+    </article>
+
+    <!-- Responsibilities / Disciplines (tu lista) -->
+    <article class="card">
+      <h3>What I did</h3>
+      <ul class="list">
+        <li>Systems design, AI design, UI/UX design, <em>game feel</em>.</li>
+        <li>Ranged combat design, level design.</li>
+        <li>Arcade mode & endless mode design.</li>
+        <li>User tests; data analysis with Power BI.</li>
+      </ul>
+    </article>
+
+    <!-- Selected examples -->
+    <article class="card">
+      <h3>Selected examples</h3>
+
+      <!-- Row 1 -->
+      <div class="row-2col" style="margin-bottom:22px">
+        <div>
+          <p><strong>Core loop & readability.</strong> Enemy spawns, ammo/ability economy, and feedback layers tuned for clarity and pace.</p>
+          <ul class="list">
+            <li>Hit-stop, screen shake, VFX/SFX layers.</li>
+            <li>Design of several weapons and projectiles.</li>
+            <li>Horde system design.</li>
+            <li>Character movement design.</li>
+             <li>Telemetry to iterate balance in short loops.</li>
+          </ul>
+        </div>
+        <figure class="project-media media-box" style="margin:0">
+          <img src="img/necro_web.png" alt="Core loop capture — Necrognomicon">
+        </figure>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row-2col" style="grid-template-columns:1fr 1.1fr; margin:0">
+        <figure class="project-media media-box" style="margin:0">
+          <img src="img/necro_screenshot.png" alt="Endless / arcade mode capture — Necrognomicon">
+        </figure>
+        <div>
+          <p><strong>Arcade & endless modes.</strong> Scoring, multipliers, waves and pacing knobs to keep challenge and flow.</p>
+          <ul class="list">
+            <li></li>
+            <li>A month before finishing the project, I reused most systems to create an arcade mode.</li>
+           
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Gallery (añade más imágenes cuando quieras) -->
+    <article class="card">
+      <h3>Gallery</h3>
+      <div class="grid">
+        <figure class="project-media media-box"><img src="img/necroweb.png" alt="Gallery item 1"></figure>
+        <figure class="project-media media-box"><img src="img/necro_screenshot.png" alt="Gallery item 2"></figure>
+        <figure class="project-media media-box"><img src="img/necroweb.png" alt="Gallery item 3"></figure>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="y"></span> Eva Pérez</div></footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script src="app.js"></script>
+</body>
+</html>
