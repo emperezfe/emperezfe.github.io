@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>londres con amigos — Eva Pérez</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="londres">
+    <div class="layout">
+      <!-- CONTENIDO DEL PROYECTO -->
+      <main class="layout__content">
+        <article class="page">
+          <!-- Texto del proyecto -->
+          <section class="page__intro">
+            <h1 class="page__title">londres con amigos</h1>
+            <p class="page__text">
+              yo y mi pequeña camarita de 35mm comprada en el rastro de madrid
+              por 2 euros contra el mundo
+            </p>
+            <p class="page__text">
+              <strong>Año:</strong> 2022<br />
+              <strong>Lugar:</strong> Londres, UK<br />
+              <strong>Formato:</strong> 35mm color
+            </p>
+          </section>
+
+          <!-- GRID 1: muchas fotos en una columna, una debajo de otra -->
+          <section class="photo-section">
+            <div class="photo-grid photo-grid--cols-1">
+              <figure class="photo-grid__item">
+                <img
+                  src="img/01/scan0024.jpg"
+                  class="photo-grid__img"
+                  alt="londres con amigos 1"
+                />
+              </figure>
+              <div class="photo-grid photo-grid--cols-2 photo-grid--vertical">
+                <figure class="photo-grid__item">
+                  <img
+                    src="img/01/scan0015.jpg"
+                    class="photo-grid__img"
+                    alt="vertical 1"
+                  />
+                </figure>
+                <figure class="photo-grid__item">
+                  <img
+                    src="img/01/scan0016.jpg"
+                    class="photo-grid__img"
+                    alt="vertical 2"
+                  />
+                </figure>
+  </div>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <!-- Sidebar vacía, se rellena por JS -->
+      <aside id="sidebar" class="layout__sidebar"></aside>
+    </div>
+
+    <script src="js/sidebar.js"></script>
+  </body>
+</html>

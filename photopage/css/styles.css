@@ -1,0 +1,269 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* evita que cambie el ancho al aparecer el scroll */
+}
+
+/* quita márgenes por defecto de textos y figuras */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+/* PALETA Y TIPO */
+:root {
+  --blue: #002fff;
+  --white: #ffffff;
+
+  /* contenido (proyectos) */
+  --content-bg: var(--white);
+  --content-text: var(--blue);
+  --content-text-muted: rgba(0, 47, 255, 0.75);
+
+  /* sidebar */
+  --sidebar-bg: var(--blue);
+  --sidebar-text: var(--white);
+
+  /* ancho fijo sidebar en escritorio */
+  --sidebar-width-fixed: 400px;
+
+  --font-mono: "Dina", "Terminus", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 40px;
+
+  /* fotos */
+  --photo-aspect-ratio: 16 / 9; /* horizontal 16:9 por defecto */
+  --photo-inner-padding: 2px;   /* padding dentro de cada foto */
+}
+
+/* BODY */
+body {
+  font-family: var(--font-mono);
+  background: var(--blue); /* azul por detrás del contenido */
+  color: var(--content-text);
+  font-size: 28px; /* grande */
+  line-height: 1.5;
+}
+
+/* LAYOUT */
+.layout {
+  min-height: 100vh;
+}
+
+/* zona que scrollea (proyectos) */
+.layout__content {
+  margin-right: var(--sidebar-width-fixed);
+  padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-l);
+  background: var(--content-bg);
+  color: var(--content-text);
+  min-height: 100vh;
+}
+
+/* sidebar fija */
+.layout__sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sidebar-width-fixed);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  /* sin border-left para evitar la barra clara interior */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-l) var(--space-m);
+}
+
+/* NAV */
+.nav__brand {
+  font-size: 2.5rem; /* más grande */
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.nav__subtitle {
+  margin-top: var(--space-xs);
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav__section-title {
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-s);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__item + .nav__item {
+  margin-top: 4px;
+}
+
+/* letras de sidebar más gordas */
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--sidebar-text);
+  font-size: 1.2rem;
+  font-weight: 700; /* gordas */
+  padding: 3px 0;
+}
+.nav__link::before {
+  content: ">";
+  margin-right: 8px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+.nav__link:hover {
+  opacity: 0.85;
+}
+
+/* activo: subrayado en vez de puntito */
+.nav__link--active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.25em;
+}
+
+.nav__footer {
+  margin-top: var(--space-l);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* CONTENIDO */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l); /* antes estaba mal la variable */
+}
+
+.page__intro {
+  width: 100%;
+}
+
+.page__eyebrow {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--content-text-muted);
+  margin-bottom: var(--space-xs);
+}
+.page__title {
+  font-size: clamp(2.6rem, 4.2vw, 3.4rem);
+  margin: 0 0 var(--space-m);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.page__text {
+  font-size: 1.1rem;
+  color: var(--content-text-muted);
+}
+
+/* SECCIONES DE FOTOS */
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+.photo-section__title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--content-text-muted);
+}
+
+/* GRID */
+.photo-grid {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+/* columnas */
+.photo-grid--cols-1 {
+  grid-template-columns: 1fr;
+}
+.photo-grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.photo-grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Orientación de bloque: horizontal (default) vs vertical girado 90º */
+
+/* Horizontal explícito */
+.photo-grid--horizontal .photo-grid__item {
+  aspect-ratio: 16 / 9;
+}
+
+/* Vertical: mismo ratio pero girado 90º (9:16) */
+.photo-grid--vertical .photo-grid__item {
+  aspect-ratio: 9 / 16;
+}
+
+/* cada ítem: ratio + padding configurable */
+.photo-grid__item {
+  position: relative;
+  background: var(--content-bg);
+  aspect-ratio: var(--photo-aspect-ratio); /* horizontal por defecto */
+  padding: var(--photo-inner-padding);
+  overflow: hidden;
+}
+
+.photo-grid__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* sin recorte */
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .layout__sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    /* puedes volver a poner un borde inferior si quieres separación */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  .layout__content {
+    margin-right: 0;
+    padding: var(--space-l);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+  .photo-grid--cols-2,
+  .photo-grid--cols-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}

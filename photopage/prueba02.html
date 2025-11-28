@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>prueba02 — verticales en pareja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body data-page="prueba02">
+    <div class="layout">
+      <main class="layout__content">
+        <article class="page">
+          <section class="page__intro">
+            <h1 class="page__title">prueba02 — verticales</h1>
+            <p class="page__text">
+              bloque de dos verticales, usando el grid de 2 columnas con
+              orientación vertical, y cierre con una horizontal.
+            </p>
+          </section>
+
+          <!-- 2 verticales -->
+          <section class="photo-section">
+            <h2 class="photo-section__title">bloque de 2 verticales</h2>
+            <div class="photo-grid photo-grid--cols-2 photo-grid--vertical">
+              <figure class="photo-grid__item">
+                <img
+                  src="img/01/scan0015.jpg"
+                  class="photo-grid__img"
+                  alt="prueba02 v1"
+                />
+              </figure>
+              <figure class="photo-grid__item">
+                <img
+                  src="img/01/scan0016.jpg"
+                  class="photo-grid__img"
+                  alt="prueba02 v2"
+                />
+              </figure>
+            </div>
+          </section>
+
+          <!-- 1 horizontal -->
+          <section class="photo-section">
+            <h2 class="photo-section__title">cierre horizontal</h2>
+            <div class="photo-grid photo-grid--cols-1 photo-grid--horizontal">
+              <figure class="photo-grid__item">
+                <img
+                  src="img/01/scan0014.jpg"
+                  class="photo-grid__img"
+                  alt="prueba02 h1"
+                />
+              </figure>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <aside id="sidebar" class="layout__sidebar"></aside>
+    </div>
+
+    <script src="js/sidebar.js"></script>
+  </body>
+</html>
