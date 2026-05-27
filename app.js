@@ -10,25 +10,26 @@
 
   // Points (hover/attraction)
   const BASE_ALPHA = 0.4;                     // opacidad base de cada punto
-  const MAX_ALPHA  = 0.7;                     // opacidad máxima al estar cerca
-  const DOT_R      = 3;                       // radio base del punto
-  const MAX_SCALE  = 1.5;                     // escala máxima al estar cerca (1.5x)
-  const INFLUENCE_R= 50;                      // radio de influencia del cursor
-  const NOISE      = 0.01;                    // movimiento browniano cuando el ratón no está activo
+  const MAX_ALPHA  = 0.75;                    // opacidad máxima al estar cerca
+  const DOT_R      = 2.5;                     // radio base del punto (más fino)
+  const MAX_SCALE  = 2.0;                     // escala máxima al estar cerca (más notoria)
+  const INFLUENCE_R= 70;                      // radio de influencia del cursor (más amplio, fuerza más suave)
+  const NOISE      = 0.008;                   // movimiento browniano cuando el ratón no está activo
   const FRICTION   = 0.965;                   // fricción global
-  const FORCE      = 0.03;                    // fuerza de atracción hacia el cursor (↑ = llega antes)
+  const FORCE      = 0.018;                   // fuerza de atracción (más suave → no se precipitan)
 
   // >>> ÓRBITAS alrededor del cursor <<<
-  const CAPTURE_R       = 12;       // distancia al cursor para “capturar” el punto en órbita
-  const ORBIT_R_BASE    = 18;       // radio base de la órbita
-  const ORBIT_R_JITTER  = 12;       // jitter +/- sobre el radio base (cada punto distinto)
-  const ORBIT_SPEED_MIN = 0.0012;   // rad/ms (mín)
-  const ORBIT_SPEED_MAX = 0.0032;   // rad/ms (máx)
-  const ORBIT_EASE      = 0.22;     // facilidad con la que el punto se acerca a su objetivo orbital
+  const CAPTURE_R       = 28;       // captura cuando entra en este radio
+  const ORBIT_R_BASE    = 55;       // radio base de la órbita (más ancho → no se apilan)
+  const ORBIT_R_JITTER  = 40;       // jitter alto → órbitas muy variadas (15 px – 95 px)
+  const ORBIT_SPEED_MIN = 0.0008;   // rad/ms (mín, más lento)
+  const ORBIT_SPEED_MAX = 0.0025;   // rad/ms (máx)
+  const ORBIT_EASE      = 0.10;     // suavidad al alcanzar la órbita
+  const MAX_ORBITING    = 18;       // máximo de puntos orbitando a la vez → evita la bola
 
   // Newcomers (puntos que entran desde bordes)
-  const NEWCOMER_BASE_MS = 1000;              // ~cada 1 s
-  const NEWCOMER_JITTER  = 500;               // +/- variación
+  const NEWCOMER_BASE_MS = 3500;              // ~cada 3.5 s (antes 1 s → demasiado spam)
+  const NEWCOMER_JITTER  = 2000;              // +/- variación
   const EDGE_OFFSET      = 40, EDGE_INSET=80; // para que no “canten” al entrar
   const FADEIN_MS        = 1200;              // fundido de aparición
 
@@ -82,7 +83,7 @@
   function makePoint(x, y, vx = 0, vy = 0, a = BASE_ALPHA, isNew = false) {
     return {
       x, y, vx, vy, a, ta: a, ox: x, oy: y, born: performance.now(),
-      isNew, resetting:false,
+      isNew, resetting:false, _near:0,
       // Estado de órbita
       orbit:false,              // si está orbitando el cursor
       orbitR: 0,                // radio orbital (asignado al capturar)
@@ -106,7 +107,7 @@
     canvas.style.width = w+'px'; canvas.style.height = h+'px';
     canvas.width = Math.floor(w*dpr); canvas.height = Math.floor(h*dpr);
     ctx.setTransform(dpr,0,0,dpr,0,0);
-    target = Math.max(200, Math.min(600, Math.floor((w*h)/4800)));
+    target = 200;
     if(pts.length===0) seed(target);
     else if(pts.length<target) for(let i=0;i<target-pts.length;i++) pts.push(makePoint(Math.random()*w,Math.random()*h));
     else pts.length = target;
@@ -114,7 +115,7 @@
   addEventListener('resize', resize, {passive:true}); resize();
 
   function spawnNewcomers(){
-    const n = Math.max(3, Math.floor(target*0.06));
+    const n = Math.min(2, Math.max(1, Math.floor(target*0.02)));  // máx 2 puntos por oleada
     for(let i=0;i<n;i++){
       const e = Math.floor(Math.random()*4);
       let x,y,vx,vy;
@@ -180,9 +181,24 @@
   addEventListener('mousemove', e=>{ mouse.x=e.clientX; mouse.y=e.clientY; mouse.active=true; }, {passive:true});
   addEventListener('mouseleave', ()=>{ mouse.active=false; }, {passive:true});
 
-  // LEFT click: explode planet if hit; else reset
+  // Touch support
+  addEventListener('touchmove', e=>{
+    const t=e.touches[0]; mouse.x=t.clientX; mouse.y=t.clientY; mouse.active=true;
+  }, {passive:true});
+  addEventListener('touchend', ()=>{ mouse.active=false; }, {passive:true});
+
+  // LEFT click / tap: explode rocket or planet if hit; else reset
   document.addEventListener('click', e=>{
     const mx=e.clientX, my=e.clientY;
+
+    // hit-test rocket first
+    if(rocket && Math.hypot(mx-rocket.x, my-rocket.y)<32){
+      explodePlanet(rocket.x, rocket.y, 20);
+      pulses.push({x:rocket.x, y:rocket.y, start:performance.now()});
+      rocket=null; nextRocketAt=performance.now()+5000+Math.random()*5000;
+      return;
+    }
+
     for(let i=planets.length-1;i>=0;i--){
       const pl=planets[i];
       if(Math.hypot(mx-pl.x,my-pl.y)<=pl.r){
@@ -192,15 +208,6 @@
         return;
       }
     }
-    // smooth reset (and kill newcomers)
-    for(let i=pts.length-1;i>=0;i--){
-      const p=pts[i];
-      if(p.isNew){ pts.splice(i,1); continue; }
-      p.resetting=true; p.vx=0; p.vy=0; p.orbit=false;
-    }
-    for(const t of trail) t.life=Math.min(t.life,300);
-    rocket=null; nextRocketAt=performance.now()+3000+Math.random()*3000;
-    pulses.push({x:mx,y:my,start:performance.now()});
   }, {passive:true});
 
   // -------- Frame --------
@@ -212,7 +219,10 @@
     if(performance.now()>nextPlanet)    spawnPlanet();
     if(!rocket && t>nextRocketAt){ launchRocket(); nextRocketAt=t+9000+Math.random()*9000; }
 
-    // Points
+    // Points — física
+    // Contamos órbitas activas al inicio del frame para aplicar el cap correctamente
+    let orbitCount=0; for(const p of pts) if(p.orbit) orbitCount++;
+
     ctx.fillStyle='#fff';
     for(let i=pts.length-1;i>=0;i--){
       const p=pts[i];
@@ -228,62 +238,56 @@
         const D=Math.hypot(dx,dy)+.0001;
 
         if(!p.orbit){
-          // atracción normal dentro de la influencia
           const f=Math.min(INFLUENCE_R/D,2.2);
           p.vx+=(dx/D)*FORCE*f; p.vy+=(dy/D)*FORCE*f;
-
-          // capturar en órbita cuando entra en CAPTURE_R
-          if(D < CAPTURE_R){
-            p.orbit = true;
-            p.orbitR = ORBIT_R_BASE + (Math.random()*2 - 1) * ORBIT_R_JITTER;      // radio con jitter
-            p.orbitAng = Math.random()*Math.PI*2;                                   // fase aleatoria
-            const s = ORBIT_SPEED_MIN + Math.random()*(ORBIT_SPEED_MAX-ORBIT_SPEED_MIN);
-            p.orbitSpeed = (Math.random()<0.5 ? -s : s);                             // sentido aleatorio
-            p.vx *= 0.5; p.vy *= 0.5; // amortigua para que no “escape”
+          // capturar solo si hay hueco libre en el cap de órbitas
+          if(D<CAPTURE_R && orbitCount<MAX_ORBITING){
+            p.orbit=true; orbitCount++;
+            p.orbitR=ORBIT_R_BASE+(Math.random()*2-1)*ORBIT_R_JITTER;  // 15–95 px
+            p.orbitAng=Math.random()*Math.PI*2;
+            const s=ORBIT_SPEED_MIN+Math.random()*(ORBIT_SPEED_MAX-ORBIT_SPEED_MIN);
+            p.orbitSpeed=(Math.random()<0.5?-s:s);
+            p.vx*=0.5; p.vy*=0.5;
           }
         } else {
-          // movimiento orbital: objetivo en circunferencia alrededor del cursor
-          p.orbitAng += p.orbitSpeed * dt;
-          const ox = mouse.x + Math.cos(p.orbitAng) * p.orbitR;
-          const oy = mouse.y + Math.sin(p.orbitAng) * p.orbitR;
-
-          p.x += (ox - p.x) * ORBIT_EASE;
-          p.y += (oy - p.y) * ORBIT_EASE;
-
-          // leve amortiguación de velocidad para evitar acumulación
-          p.vx *= 0.85; 
-          p.vy *= 0.85;
-
-          // liberar si el cursor se aleja mucho
-          if (Math.hypot(mouse.x - p.x, mouse.y - p.y) > INFLUENCE_R * 0.95) {
-            p.orbit = false;
-          }
+          p.orbitAng+=p.orbitSpeed*dt;
+          const ox=mouse.x+Math.cos(p.orbitAng)*p.orbitR;
+          const oy=mouse.y+Math.sin(p.orbitAng)*p.orbitR;
+          p.x+=(ox-p.x)*ORBIT_EASE; p.y+=(oy-p.y)*ORBIT_EASE;
+          p.vx*=0.85; p.vy*=0.85;
+          // desmagnetizar si el cursor se aleja demasiado del dot
+          if(D > ORBIT_R_BASE + ORBIT_R_JITTER + 40){ p.orbit=false; orbitCount--; }
         }
       } else {
-        // sin cursor activo: vida normal
         p.vx+=(Math.random()-.5)*NOISE; p.vy+=(Math.random()-.5)*NOISE;
-        // si estaba orbitando y el cursor se fue, libéralo
-        if(p.orbit) p.orbit=false;
+        if(p.orbit){ p.orbit=false; orbitCount--; }
       }
 
-      // integración
       p.vx*=FRICTION; p.vy*=FRICTION; p.x+=p.vx; p.y+=p.vy;
 
-      // newcomer fade-in
       if(p.isNew && p.a<BASE_ALPHA){
         const k=Math.min(1,(performance.now()-p.born)/FADEIN_MS);
         p.a=BASE_ALPHA*k;
       }
 
-      const dist = mouse.active ? Math.hypot(mouse.x-p.x, mouse.y-p.y) : Infinity;
-      const near = Math.max(0, Math.min(1, 1 - dist/INFLUENCE_R));
-      p.ta = BASE_ALPHA + near*(MAX_ALPHA-BASE_ALPHA);
-      p.a += (p.ta - p.a)*0.15;
+      const dist=mouse.active?Math.hypot(mouse.x-p.x,mouse.y-p.y):Infinity;
+      p._near=Math.max(0,Math.min(1,1-dist/INFLUENCE_R));
+      p.ta=BASE_ALPHA+p._near*(MAX_ALPHA-BASE_ALPHA);
+      p.a+=(p.ta-p.a)*0.15;
+    }
 
-      const r = DOT_R * (1 + near*(MAX_SCALE-1));
-
-      ctx.globalAlpha=p.a;
-      ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.fill();
+    // Points — render (batching: un solo path para los dots “en reposo”, individuales solo los iluminados)
+    ctx.globalAlpha=BASE_ALPHA;
+    ctx.beginPath();
+    for(const p of pts){
+      if(p._near<0.05){ ctx.moveTo(p.x+DOT_R,p.y); ctx.arc(p.x,p.y,DOT_R,0,Math.PI*2); }
+    }
+    ctx.fill();
+    for(const p of pts){
+      if(p._near>=0.05){
+        ctx.globalAlpha=p.a;
+        ctx.beginPath(); ctx.arc(p.x,p.y,DOT_R*(1+p._near*(MAX_SCALE-1)),0,Math.PI*2); ctx.fill();
+      }
     }
     ctx.globalAlpha=1;
 
@@ -291,6 +295,12 @@
     for(let i=planets.length-1;i>=0;i--){
       const pl=planets[i];
       pl.x+=pl.vx; pl.y+=pl.vy; pl.angle+=pl.spin*dt;
+      // repulsión suave del cursor: radio amplio, fuerza pequeña → se aparta sin huir
+      if(mouse.active){
+        const pdx=pl.x-mouse.x, pdy=pl.y-mouse.y, pD=Math.hypot(pdx,pdy)+0.001;
+        if(pD<90){ const f=(1-pD/90)*0.05; pl.vx+=(pdx/pD)*f; pl.vy+=(pdy/pD)*f; }
+      }
+      pl.vx*=0.985; pl.vy*=0.985;
       if(pl.x<-pl.r) pl.x=w+pl.r; if(pl.x>w+pl.r) pl.x=-pl.r;
       if(pl.y<-pl.r) pl.y=h+pl.r; if(pl.y>h+pl.r) pl.y=-pl.r;
 
@@ -369,23 +379,6 @@
       ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke(); ctx.globalAlpha=1;
     }
 
-    // Visualización del área de influencia del cursor (encima de todo)
-    if (mouse.active) {
-      ctx.save();
-      ctx.globalAlpha = 0.15;
-      ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, INFLUENCE_R, 0, Math.PI * 2);
-      ctx.fillStyle = '#fff';
-      ctx.fill();
-
-      ctx.globalAlpha = 0.45;
-      ctx.beginPath();
-      ctx.arc(mouse.x, mouse.y, CAPTURE_R, 0, Math.PI * 2);
-      ctx.strokeStyle = '#fff';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      ctx.restore();
-    }
 
     // Top up
     if(pts.length<target){ const add=Math.min(8,target-pts.length); for(let i=0;i<add;i++) pts.push(makePoint(Math.random()*w,Math.random()*h)); }
