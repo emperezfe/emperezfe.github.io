@@ -242,7 +242,7 @@
 
     for (let i = planets.length - 1; i >= 0; i--) {
       const pl = planets[i];
-      if (Math.hypot(mx - pl.x, my - pl.y) <= pl.r) {
+      if (Math.hypot(mx - pl.x, my - pl.y) <= pl.r * 1.5) {
         explodePlanet(pl.x, pl.y, pl.r);
         planets.splice(i, 1);
         pulses.push({ x: mx, y: my, start: performance.now() });
