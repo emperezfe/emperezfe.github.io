@@ -4,16 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sofatutor — Eva Pérez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="bg-canvas"></canvas>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <header class="header">
     <div class="container nav">
       <a class="brand" href="index.html"><span class="logo">E</span><span>Eva Pérez</span></a>
-      <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button></nav>
+      <nav><button class="menu-btn" onclick="document.querySelector('.nav').classList.toggle('open')">☰ Menu</button></nav>
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a class="active" href="career.html">Career</a></li>
         <li><a href="academic.html">Academic</a></li>
         <li><a href="personal.html">Personal Projects</a></li>
@@ -22,110 +24,109 @@
   </header>
 
   <main class="container">
-    <a href="career.html" class="eyebrow">← Back</a>
-    <h1 class="h1">Sofatutor</h1>
-    <p class="muted">Game & Product Designer — Apr 2025–Present</p>
+    <a href="career.html" style="display:inline-block;margin:24px 0 8px;color:var(--muted);font-size:.9rem">← Back to career</a>
+    <h1 class="h1">Sofatutor KIDS</h1>
+    <p class="muted">Game &amp; Product Designer — Apr 2025 — Present</p>
 
-<!-- Overview / Responsibilities / Tools -->
-<section class="grid" style="margin-bottom:18px">
-  <article class="card">
-    <h3>Overview</h3>
-    <ul class="list">
-      <li><strong>Role:</strong> Game & Product Designer</li>
-      <li><strong>Scope:</strong> Kid-friendly learning products from concept to release</li>
-      <li><strong>Core overlap:</strong> Game design ↔ Product / UI / UX</li>
-      <li><strong>Platforms:</strong> iOS & Android</li>
-      <li><strong>Tools:</strong> Unity (C#), Figma</li>
-    </ul>
-  </article>
+    <!-- Overview / Key areas / Tools -->
+    <section class="grid" style="margin:24px 0 18px">
+      <article class="card">
+        <h3>Overview</h3>
+        <ul class="list">
+          <li><strong>Role:</strong> Game &amp; Product Designer</li>
+          <li><strong>Focus:</strong> Educational games &amp; platform product</li>
+          <li><strong>Audience:</strong> Kids ages 4–10</li>
+          <li><strong>Platform:</strong> iOS, Android &amp; Web</li>
+          <li><strong>Team:</strong> Design, Engineering, Art, Product, Analytics</li>
+        </ul>
+      </article>
 
-  <article class="card">
-    <h3>What I do</h3>
-    <ul class="list">
-      <li>Core loops & mechanics for educational games (ages 2–6).</li>
-      <li>Fast Unity prototypes to validate mechanics and tune moment-to-moment <em>game feel</em>.</li>
-      <li>App-wide UI/UX (flows, components, design system) in <strong>Figma</strong>.</li>
-      <li>Prepare stories and align stakeholders across design, engineering, content and analytics.</li>
-    </ul>
-  </article>
+      <article class="card">
+        <h3>Key areas</h3>
+        <ul class="list">
+          <li>Game design — full ownership from concept to ship</li>
+          <li>Game rework — KPI-driven redesigns of existing titles</li>
+          <li>Product design — new platform features &amp; learning formats</li>
+          <li>App UX — flows, information architecture, system design</li>
+        </ul>
+      </article>
 
-  <article class="card">
-    <h3>Tools</h3>
-    <ul class="list">
-      <li>Unity, Figma, spreadsheets</li>
-      <li>Amplitude / Looker (analytics)</li>
-      <li>Jira, Confluence</li>
-    </ul>
-  </article>
-</section>
+      <article class="card">
+        <h3>Tools</h3>
+        <ul class="list">
+          <li>Figma (design &amp; prototyping)</li>
+          <li>Unity (rapid prototyping)</li>
+          <li>Amplitude (analytics &amp; KPIs)</li>
+          <li>Notion, Confluence (documentation)</li>
+        </ul>
+      </article>
+    </section>
 
-
-    <!-- Selected projects (alternating rows with 16:9 media boxes) -->
-    <article class="card">
-      <h3>Selected projects</h3>
-
-      <!-- Row: Tracing Template -->
-      <div class="row-2col" style="margin-bottom:22px">
-        <div>
-          <p><strong>Tracing game template</strong> enabling <strong>50+ games</strong>. Full ownership from concept to release,
-          supervision through production, and adaptations under tight technical constraints.</p>
-          <ul class="list">
-            <li>Stroke detection, forgiveness windows, delightful feedback.</li>
-            <li>Localization-friendly content pipeline.</li>
-          </ul>
-        </div>
-        <figure class="project-media media-box" style="margin:0">
-          <!-- sustituye por tu captura -->
-          <img src="img/sofatutor_tracing.jpg" alt="Tracing template — Sofatutor">
-        </figure>
-      </div>
-
-      <!-- Row: Two fast templates -->
-      <div class="row-2col" style="grid-template-columns:1fr 1.1fr; margin-bottom:22px">
-        <figure class="project-media media-box" style="margin:0">
-          <img src="img/sofatutor_fasttemplate.jpg" alt="Fast template — Sofatutor">
-        </figure>
-        <div>
-          <p><strong>Two fast-track game templates</strong> delivered in ~1 month each; pre-coded Unity prototypes to de-risk design.
-          These templates now power <strong>20+ shipped games</strong>.</p>
-          <ul class="list">
-            <li>Mechanics validation + content-authoring approach.</li>
-            <li>Polished controls & juice aligned with the brand.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Row: Engagement / product features
-      <div class="row-2col" style="margin:0">
-        <div>
-          <p><strong>Engagement features</strong> to support alternative learning formats. Product exploration and
-          clickable <strong>Figma prototypes</strong> for flows, navigation and components.</p>
-          <ul class="list">
-            <li>Hypothesis-driven UX with quick evaluative tests.</li>
-            <li>Design tokens & systemized components for the kids app.</li>
-          </ul>
-        </div>
-        <figure class="project-media media-box" style="margin:0">
-          <img src="img/sofatutor_engagement.jpg" alt="Engagement features — Sofatutor">
-        </figure>
-      </div>
-    </article>
-
-     -->
-
-    <!-- Impact -->
-    <article class="card">
-      <h3>Impact</h3>
-      <ul class="list">
-        <li>Shorter iteration cycles via prototype-first workflow.</li>
-        <li>Clearer, more consistent UI patterns across the kids experience.</li>
-        <li>Higher reliability of shipped mechanics thanks to early feel-tuning.</li>
+    <!-- Game Design -->
+    <article class="card" style="margin-bottom:18px">
+      <h3>Game Design</h3>
+      <p>
+        As the main game design responsible on the platform, I own educational game design end-to-end — from initial concept and core loop definition through prototyping, production and post-launch iteration.
+      </p>
+      <p style="margin-top:12px">
+        I have <strong>shipped 4 games</strong> to date, with several more in active development. Each title targets specific learning objectives across subjects like maths, language and science, and must work within the constraints of a kids' platform: short sessions, no reading required, and feedback that feels rewarding rather than punishing.
+      </p>
+      <p style="margin-top:12px">
+        Beyond new titles, I have led <strong>rework projects on existing games</strong> where engagement or retention metrics were underperforming. This involves diagnosing friction points through analytics and playtesting, proposing and validating design changes, and tracking the KPI impact after re-release.
+      </p>
+      <ul class="list" style="margin-top:14px">
+        <li>Core loop and progression system design</li>
+        <li>Difficulty balancing and learning curve tuning</li>
+        <li>Unity prototyping to validate feel and mechanics early</li>
+        <li>Data-informed post-launch iteration on shipped titles</li>
+        <li>User testing with children; incorporating findings into design decisions</li>
       </ul>
     </article>
+
+    <!-- Product Design -->
+    <article class="card" style="margin-bottom:18px">
+      <h3>Product Design</h3>
+      <p>
+        Beyond individual games, I contribute to the broader product as a feature designer. My focus is on identifying opportunities to add excitement and depth to the platform — not just fixing what's broken, but finding new ways to engage kids and give families more value.
+      </p>
+      <p style="margin-top:12px">
+        A key area has been designing <strong>alternative learning formats</strong>: experiences that go beyond the classic game loop to offer different entry points into learning content — more open-ended, more creative, or structured differently to reach kids who don't respond as well to traditional quiz or arcade mechanics.
+      </p>
+      <ul class="list" style="margin-top:14px">
+        <li>Feature definition and scoping from user needs and business goals</li>
+        <li>Low and high-fidelity prototyping in Figma</li>
+        <li>Cross-functional alignment with product, engineering and pedagogy teams</li>
+        <li>Defining success metrics before shipping; reviewing them post-launch</li>
+      </ul>
+    </article>
+
+    <!-- App Design -->
+    <article class="card">
+      <h3>App Design</h3>
+      <p>
+        I also contribute to the design of the Sofatutor app itself — the shell experience surrounding the games. This includes navigation, system-level features and onboarding flows.
+      </p>
+      <p style="margin-top:12px">
+        Notable work includes the design of the <strong>multiprofile system</strong>, which allows multiple children within a family to have separate profiles, progress and personalised content. This required mapping complex edge cases, designing a clear information architecture, and making the profile-switching experience fast and frictionless for both kids and parents.
+      </p>
+      <p style="margin-top:12px">
+        I have also contributed to <strong>menu and navigation redesigns</strong>, improving content discoverability and reducing the steps to reach learning content — with measurable improvements in session start rates.
+      </p>
+      <ul class="list" style="margin-top:14px">
+        <li>Multiprofile system: flows, edge cases, and family account logic</li>
+        <li>Navigation redesigns for improved discoverability</li>
+        <li>Onboarding and first-session experience design</li>
+        <li>Component-level contributions to the shared design system</li>
+      </ul>
+    </article>
+
   </main>
 
-  <footer class="footer"><div class="container">© <span id="y"></span> Eva Pérez</div></footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> Eva Pérez — Portfolio</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script src="app.js"></script>
 </body>
 </html>
